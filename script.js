@@ -263,30 +263,6 @@ if (yearElement) {
 /* ==============================
    END YTECH HOTEL JAVASCRIPT
 ============================== */
-/* GALLERY SLIDE-IN WHEN VISIBLE */
-
-const galleryPhotos = document.querySelectorAll(".gallery-grid img");
-
-const galleryObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const photo = entry.target;
-      const index = Array.from(galleryPhotos).indexOf(photo);
-
-      setTimeout(() => {
-        photo.classList.add("show-photo");
-      }, index * 200);
-
-      galleryObserver.unobserve(photo);
-    }
-  });
-}, {
-  threshold: 0.15
-});
-
-galleryPhotos.forEach((photo) => {
-  galleryObserver.observe(photo);
-});
 /* GALLERY SLIDESHOW */
 
 const galleryPhotos = document.querySelectorAll(".gallery-photo");
